@@ -40,18 +40,65 @@ aside {
   width: 0;
   padding: 0;
   transition: all 0.5s;
+  flex-shrink: 1;
 }
 
 aside[active] {
   background-color: rgb(255, 242, 226);
   padding: 10px;
   width: 300px;
+  flex-shrink: 1;
+}
+
+aside * {
+  display: none;
+}
+
+aside[active] * {
+  display: initial;
 }
 
 main {
   width: 100%;
+  overflow-y: scroll;
 }
 
 .menu {
   cursor: pointer;
+}
+
+section {
+  padding: 20px;
+}
+
+.card {
+  background-color: antiquewhite;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: indianred;
+}
+
+.flex {
+  display: flex;
+  min-width: 200px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+@media only screen and (min-width: 1000px) {
+  .flex {
+    display: flex;
+    max-width: calc(33% - 30px);
+    min-width: 200px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
 }
